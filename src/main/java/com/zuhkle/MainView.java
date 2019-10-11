@@ -24,9 +24,13 @@ public class MainView extends VerticalLayout {
         final VerticalLayout layout = new VerticalLayout();
         layout.addComponentAsFirst(grid);
 
-        List<Customer> customers = service.findAll();
-        grid.setItems(customers);
+        updateList();
 
         add(layout);
+    }
+
+    public void updateList() {
+        List<Customer> customers = service.findAll();
+        grid.setItems(customers);
     }
 }
